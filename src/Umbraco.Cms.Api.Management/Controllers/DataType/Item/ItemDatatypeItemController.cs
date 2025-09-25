@@ -1,4 +1,4 @@
-﻿using Asp.Versioning;
+using Asp.Versioning;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Api.Management.ViewModels.DataType.Item;
@@ -23,6 +23,7 @@ public class ItemDatatypeItemController : DatatypeItemControllerBase
     [HttpGet]
     [MapToApiVersion("1.0")]
     [ProducesResponseType(typeof(IEnumerable<DataTypeItemResponseModel>), StatusCodes.Status200OK)]
+    [EndpointSummary("Gets data type items by ids")]
     public async Task<IActionResult> Item(
         CancellationToken cancellationToken,
         [FromQuery(Name = "id")] HashSet<Guid> ids)
