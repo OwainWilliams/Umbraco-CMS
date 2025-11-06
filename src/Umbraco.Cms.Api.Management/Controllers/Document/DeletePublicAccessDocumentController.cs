@@ -29,8 +29,8 @@ public class DeletePublicAccessDocumentController : DocumentControllerBase
     [HttpDelete("{id:guid}/public-access")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
-    [EndpointSummary("Deletes a document.")]
-    [EndpointDescription("Deletes a document identified by the provided Id.")]
+    [EndpointSummary("Deletes public access protection for a document.")]
+    [EndpointDescription("Deletes public access protection for the document identified by the provided Id..")]
     public async Task<IActionResult> Delete(CancellationToken cancellationToken, Guid id)
     {
         AuthorizationResult authorizationResult = await _authorizationService.AuthorizeResourceAsync(
